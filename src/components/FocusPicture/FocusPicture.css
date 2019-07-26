@@ -16,6 +16,10 @@
     margin: 0;
 }
 
+.focus-container img {
+    margin-bottom: 0.5em;
+}
+
 @media only screen and (min-width: 768px) {
     .focus-container {
         height: 400px;

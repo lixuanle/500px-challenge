@@ -1,10 +1,13 @@
 .pictures-header {
     display: flex;
+    flex: 100%;
     justify-content: center;
     width: 400px;
     margin: auto;
     padding: 50px 0;
-    font-size: 32px;
-    flex: 100%;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: "Helvetica";
     text-align: center;
+    
 }
