@@ -1,0 +1,37 @@
+.picture-box {
+    height: 400px;
+    width: 100%;
+}
+
+.picture-box:hover {
+    cursor: pointer;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .picture-box {
+        height: 300px;
+        width: 49%;
+        margin: 3px;
+    }
+
+    .picture-box:nth-child(2n+1) {
+        margin-left: 6px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .picture-box {
+        width: 19%;
+        margin: 0.3em;
+        height: 250px;
+    }
+
+    .picture-box:nth-child(5n+1) {
+        margin-left: 0.6em;
+    }
+}

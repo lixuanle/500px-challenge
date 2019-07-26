@@ -1,0 +1,10 @@
+.pictures-header {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    margin: auto;
+    padding: 50px 0;
+    font-size: 32px;
+    flex: 100%;
+    text-align: center;
+}

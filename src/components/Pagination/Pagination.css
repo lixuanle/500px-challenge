@@ -1,0 +1,15 @@
+.pagination {
+    display: flex;
+    flex: 100%;
+    justify-content: space-between
+}
+
+.page-button {
+    border: 1px solid black;
+    padding: 10px 15px;
+}
+
+.page-button:hover {
+    cursor: pointer;
+    background-color:#00FFFF;
+}
