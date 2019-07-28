@@ -14,6 +14,7 @@ class PopularPictures extends Component {
       lightbox: false,
       index: 0,
       page: 1,
+      currentPage: 1
     }
   }
 
@@ -21,13 +22,15 @@ class PopularPictures extends Component {
     this.props.fetchPictures(1);
   }
 
-  fetchNewPage = (page, change=null) => {
-    this.props.fetchPictures(page);
-    if(change === 'increase') {
+  fetchNewPage = async (page, change=null) => {
+    this.setState({
+      currentPage: page
+    }, async () => await this.props.fetchPictures(this.state.currentPage))
+    if(change === 'increase' || page === this.state.page+5) {
       this.setState({
         page: this.state.page+5
       })
-    } if (change === 'decrease') {
+    } if (change === 'decrease' || page < this.state.page) {
         if(this.state.page === 1) { 
           return;
         } else {
@@ -35,9 +38,8 @@ class PopularPictures extends Component {
             page: this.state.page-5
           })
         }
-    } else {
-        return;
     }
+    return null;
   }
 
   lightBoxToggle = (index) => {
@@ -57,10 +59,16 @@ class PopularPictures extends Component {
 
   render() {
     const { pictures } = this.props;
-    const { lightbox, index, page } = this.state;
+    const { lightbox, index, page, currentPage } = this.state;
     const containerClass = !lightbox ? "pictures-container" : "pictures-container lightbox";
     const pictures_list = pictures.map((picture, index) => 
-      <PictureBox key={picture.id} imageURL={picture.image_url} picID={picture.id} lightBoxToggle={this.lightBoxToggle} lightbox={lightbox} index={index}/>
+      <PictureBox key={picture.id} 
+                  imageURL={picture.image_url} 
+                  picID={picture.id} 
+                  lightBoxToggle={this.lightBoxToggle} 
+                  lightbox={lightbox} 
+                  index={index}
+      />
     ) 
     const renderFocus = lightbox ? <FocusPicture className="focus" pictureData={pictures[index]}/> : null;
     return (
@@ -69,7 +77,7 @@ class PopularPictures extends Component {
         <div className={containerClass}>
           <Header/>
           {pictures_list}
-          <Pagination page={page} fetchPage={this.fetchNewPage}/>
+          <Pagination page={page} fetchPage={this.fetchNewPage} current={currentPage}/>
         </div>
       </div>
     )

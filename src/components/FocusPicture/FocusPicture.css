@@ -1,35 +1,62 @@
 .focus-container {
     position: fixed;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 1 !important;
-    height: 300px;
-    width: 300px;
+    justify-content: center; 
     z-index: 99999;
     left: 0;
     right: 0;
-    margin: 10em auto;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.landscape {
+    max-width: 1000px;
+    margin: 6em auto;
+}
+
+.landscape img {
+    width: 100%;
+}
+
+.portrait {
+    max-height: 70vh;
+    max-width: 450px;
+    margin: 8em auto;
 }
 
 .focus-container p {
     margin: 0;
 }
 
-.focus-container img {
-    margin-bottom: 0.5em;
+
+.focus-details {
+    margin-top: 0.5em;
 }
 
-@media only screen and (min-width: 768px) {
-    .focus-container {
-        height: 400px;
-        width: 400px;
+@media only screen and (max-width: 992px) {
+    .landscape {
+        max-width: 700px;
     }
 }
 
-@media only screen and (min-width: 1280px) {
-    .focus-container {
-        height: 500px;
-        width: 500px;
+@media only screen and (max-width: 768px) {
+    .landscape {
+        max-width: 550px;
+    }
+
+    .portrait {
+        max-width: 450px;    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    .portrait {
+        max-height: 60vh;
+        max-width: 300px;
+    }
+
+    .landscape {
+        margin: 10em auto;
+        max-width: 300px;
     }
 }

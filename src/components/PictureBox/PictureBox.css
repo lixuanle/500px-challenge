@@ -1,7 +1,7 @@
 .picture-box {
-    height: 400px;
-    width: 100%;
-    margin-bottom: 0.3em;
+    width: 19%;
+    height: 250px;
+    margin: 0.3em auto;
 }
 
 .picture-box img {
@@ -17,7 +17,8 @@
     transition: opacity 0.5s;
 }
 
-@media only screen and (min-width: 768px) {
+
+@media only screen and (max-width: 992px) {
     .picture-box {
         height: 300px;
         width: 49%;
@@ -29,10 +30,10 @@
     }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (max-width: 764px) {
     .picture-box {
-        width: 19%;
-        height: 250px;
-        margin: 0.3em auto;
+        height: 400px;
+        width: 100%;
+        margin-bottom: 0.3em;
     }
 }

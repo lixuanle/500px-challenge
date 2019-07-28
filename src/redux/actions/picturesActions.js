@@ -11,7 +11,6 @@ export const getPictures = (page) => async (dispatch) => {
         page: page
       }
     });
-    console.log(res);
     dispatch({
         type: 'GET_PICTURES',
         payload: res.data.photos
