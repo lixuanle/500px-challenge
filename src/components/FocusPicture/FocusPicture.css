@@ -11,7 +11,8 @@
 }
 
 .landscape {
-    max-width: 1000px;
+    max-width: 750px;
+    max-height: 70vh;
     margin: 6em auto;
 }
 
@@ -22,7 +23,7 @@
 .portrait {
     max-height: 70vh;
     max-width: 450px;
-    margin: 8em auto;
+    margin: 6em auto;
 }
 
 .focus-container p {
