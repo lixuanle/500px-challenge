@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 1280px;
-  margin: auto;
+  margin: 8px;
   opacity: 1;
   transition: opacity 1s;
 }
@@ -15,4 +15,10 @@
 .focus {
   opacity: 1;
   transition: opacity 1s;
+}
+
+@media only screen and (min-width: 768px) {
+  .pictures-container {
+    margin: auto;
+  }
 }
